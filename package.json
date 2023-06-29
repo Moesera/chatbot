@@ -4,7 +4,8 @@
   "description": "chatbot created with OpenAI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite --open"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Sigvel/chatbot/issues"
   },
-  "homepage": "https://github.com/Sigvel/chatbot#readme"
+  "homepage": "https://github.com/Sigvel/chatbot#readme",
+  "devDependencies": {
+    "vite": "^4.3.9"
+  }
 }
