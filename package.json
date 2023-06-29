@@ -1,0 +1,24 @@
+{
+  "name": "chatbot",
+  "version": "0.0.1",
+  "description": "chatbot created with OpenAI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sigvel/chatbot.git"
+  },
+  "keywords": [
+    "Chat",
+    "Bot",
+    "OpenAi"
+  ],
+  "author": "Tony Erlandsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sigvel/chatbot/issues"
+  },
+  "homepage": "https://github.com/Sigvel/chatbot#readme"
+}
