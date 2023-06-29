@@ -2,13 +2,43 @@
 :root {
   font-size: 62.5%;
 }
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
   padding: 0;
   font: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  background: url("/src/assets/images/peakpx\ \(3\).jpg");
+  background-repeat: no-repeat;
+  color: white;
+  /* Setting the font size back to the default */
+  font-size: 1.6rem;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.85);
+  min-height: 4rem;
+}
+
+main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100%;
+}
+
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  margin: 0.5rem auto 0.5rem auto;
 }
