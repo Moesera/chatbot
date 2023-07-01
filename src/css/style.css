@@ -1,14 +1,186 @@
+@import url("./import/variables.css");
+
 /* Setting text size to a 10 based system for rem and em */
 :root {
   font-size: 62.5%;
 }
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
   padding: 0;
   font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: aquamarine;
+  transition: background-color 0.5s;
+}
+
+a:hover {
+  color: white;
+}
+
+ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+li {
+  list-style: none;
+  color: aquamarine;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  background: url("/src/assets/images/peakpx\ \(3\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  /* Setting the font size back to the default */
+  font-size: 1.6rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  min-height: 4rem;
+  margin-bottom: 2rem;
+}
+
+header span {
+  font-weight: bold;
+  cursor: default;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100%;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.85);
+  font-size: 1.3rem;
+  padding: 2rem;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+footer > p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 1rem auto auto;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1rem 0rem 3rem;
+}
+
+.response-wrapper {
+  flex: 1;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.85);
+  min-height: 20rem;
+  width: 90%;
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+form {
+  display: flex;
+  align-items: end;
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 2rem;
+}
+
+form span[contenteditable] {
+  max-height: 20rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+[contenteditable="true"]:empty:not(:focus):before {
+  content: attr(data-ph);
+  color: white;
+  font-style: italic;
+}
+
+.placeholder {
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+}
+
+form > button[type="submit"] {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  margin-left: 0.5rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+button[type="submit"] img {
+  width: 2rem;
+  margin-left: auto;
+}
+
+form > button[type="submit"]:hover{
+  background-color: aquamarine;
+}
+
+/* Error messages */
+.error {
+  background: lightcoral;
+  color: red;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.success {
+  background: lightgreen;
+  color: green;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }

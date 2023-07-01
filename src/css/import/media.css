@@ -1,0 +1,18 @@
+
+@media (1250px <= width) {
+  header div {
+    width: 120rem;
+  }
+
+  footer div {
+    width: 120rem;
+  }
+
+  .response-wrapper {
+    width: 120rem;
+  }
+
+  form {
+    width: 120rem;
+  }
+}
