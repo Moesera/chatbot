@@ -9,6 +9,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-transform: capitalize;
 }
 
 * {
@@ -21,6 +22,8 @@ a {
   text-decoration: none;
   color: aquamarine;
   transition: background-color 0.5s;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
 
 a:hover {
@@ -58,14 +61,47 @@ header {
   margin-bottom: 2rem;
 }
 
+header label {
+  display: grid;
+  align-items: center;
+  width: 50%;
+}
+
+header label img, header label input {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+header label img {
+  margin-right: 0.5rem;
+  justify-self: end;
+  z-index: 2;
+}
+
+header input {
+  border-width: 0.1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+input::placeholder {
+  color: white;
+}
+
 header span {
   font-weight: bold;
   cursor: default;
+  text-transform: uppercase;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 header div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
   margin: 0 auto;
 }
@@ -128,9 +164,11 @@ form {
   padding-top: 2rem;
 }
 
-form span[contenteditable] {
+form textarea {
+  resize: none;
   max-height: 20rem;
   width: 100%;
+  border: none;
   border-radius: 0.5rem;
   padding: 1rem;
   background: rgba(0, 0, 0, 0.85);
@@ -138,17 +176,11 @@ form span[contenteditable] {
   box-shadow: var(--shadow);
 }
 
-[contenteditable="true"]:empty:not(:focus):before {
-  content: attr(data-ph);
+/* .placeholder {
   color: white;
-  font-style: italic;
-}
+} */
 
-.placeholder {
-  color: white;
-}
-
-input::placeholder {
+textarea::placeholder {
   color: white;
 }
 
