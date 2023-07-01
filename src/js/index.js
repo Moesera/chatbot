@@ -1,20 +1,29 @@
-import { checkPlaceholderEmpty } from "./components/userInputs";
+import { createFormData } from "./api/handler/handleUserInput";
 
 //  move into a constants file / folder
 const userPrompt = document.getElementById("prompt");
+const userInputForm = document.getElementById("userInputForm");
+const submitButton = document.getElementById("submitButton");
+const accessKeyInput = document.getElementById("accessKeyInput");
 
 //  maybe move this into its own function and import it to keep it cleaner
-userPrompt.addEventListener('input', () => {
-  userPrompt.style.height = 'auto';
+userPrompt.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    submitButton.click();
+  }
+
+  userPrompt.style.height = "auto";
   userPrompt.style.height = `${userPrompt.scrollHeight}px`;
 
   if (userPrompt.scrollHeight > 200) {
-    userPrompt.style.overflowY = 'scroll';
-    userPrompt.style.height = '100rem';
+    userPrompt.style.overflowY = "scroll";
+    userPrompt.style.height = "100rem";
   } else {
-    userPrompt.style.overflowY = 'hidden';
+    userPrompt.style.overflowY = "hidden";
   }
-
-  checkPlaceholderEmpty(userPrompt, "Message", "data-ph");
 });
 
+userInputForm.addEventListener("submit", createFormData);
+
+// accessKeyInput.addEventListener("")
