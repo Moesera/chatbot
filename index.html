@@ -14,6 +14,10 @@
   <header>
     <div>
       <span>ChatBot</span>
+      <label for="accessKeyInput">
+        <img src="./src/assets/icons/icons8-cross-24.png" alt="cross icon">
+        <input type="text" id="accessKeyInput" name="accessKeyInput" placeholder="enter api key"/>
+      </label>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
@@ -28,9 +32,10 @@
       <!-- User response box -->
       <div id="bot-response" class="response-wrapper"></div>
       <!-- User input to ChatBot -->
-      <form>
-        <span contenteditable="true" id="prompt" data-ph="Message"/></span>
-      <button contenteditable="false" type="submit">
+      <form id="userInputForm">
+        <label for="message"></label>
+        <textarea placeholder="message" name="message" rows="1" id="prompt" data-ph="Message"/></textarea>
+      <button contenteditable="false" type="submit" id="submitButton">
         <img src="./src/assets/icons/icons8-arrow-right-32.png" alt="arrow right" />
       </button>
       </form>
@@ -38,9 +43,9 @@
   </main>
   <footer>
     <div class="footer-links">
-      <a href="#">Github</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Github</a>
+      <a href="#">github</a>
+      <a href="#">linkedIn</a>
+      <a href="#">icons8</a>
     </div>
     <p>Copyright @Sigvel / Tony Erlandsen</p>
   </footer>
