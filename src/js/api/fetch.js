@@ -1,10 +1,11 @@
+import { headers } from "./headers";
 import { apiPath } from "../constants/urls"
 
-export async function fetchData(body) {
+export async function fetchData(body, method) {
 
 const res = await fetch(`${apiPath}`, {
-method: "post",
-body: JSON.stringify(),
+method: method,
+body: JSON.stringify(body),
 headers: headers("application/json")
 });
 
