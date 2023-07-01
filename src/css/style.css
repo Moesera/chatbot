@@ -35,7 +35,6 @@ ul {
 li {
   list-style: none;
   color: aquamarine;
-
 }
 
 body {
@@ -45,6 +44,7 @@ body {
   min-height: 100vh;
   background: url("/src/assets/images/peakpx\ \(3\).jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   /* Setting the font size back to the default */
   font-size: 1.6rem;
@@ -86,11 +86,13 @@ footer div {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
   margin-bottom: 2rem;
 }
 
 footer > p {
-  font-size:  1rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -125,15 +127,20 @@ form {
   padding-top: 2rem;
 }
 
-form input {
-width: 100%;
-outline: none;
-border: none;
-border-radius: 0.5rem;
-padding: 1rem;
-background: rgba(0, 0, 0, 0.85);
-color: white;
-box-shadow: var(--shadow);
+form div[contenteditable] {
+  max-height: 20rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+[contenteditable="true"]:empty:not(:focus):before {
+  content: attr(data-ph);
+  color: white;
+  font-style: italic;
 }
 
 input::placeholder {
@@ -141,18 +148,21 @@ input::placeholder {
 }
 
 form > button[type="submit"] {
-border: none;
-border-radius: 0.5rem;
-padding: 0rem 1rem;
-margin-left: 0.5rem;
-display: flex;
-justify-content: center;
-align-items: center;
-box-shadow: var(--shadow);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  margin-left: 0.5rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 button[type="submit"] img {
   width: 2rem;
+  margin-left: auto;
+}
+
+form > button[type="submit"]:hover{
+  background-color: aquamarine;
 }
 
 /* Error messages */
