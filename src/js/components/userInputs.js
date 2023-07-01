@@ -1,19 +1,22 @@
 import { createHtmlElement } from "../html/createHtml";
 
-var div = document.querySelector(".contenteditable-div");
-
 /**
  * Checks if a placeholder is empty
  * @param {htmlNode} element The input element you want to check if its empty
- * @param {string} content Message you want to replace with if empty or pass empty string;
+ * @param {string} data data attribute you want to set to the element;
+ * @param {string} dataContent data attribute content you want to set if empty
  * @example
  * ```js
- * checkIfEmpty(htmlElement, "content to set if empty")
+ * checkPlaceholderEmpty(htmlElement, "content to set if empty")
  * ```  
  */
-export function checkPlaceholderEmpty(element, content) {
-  if (element.innerHTML.trim() === "") {
+export function checkPlaceholderEmpty(element, data, dataContent) {
+  
+  if (element.innerHTML.trim() === "<br>") {
     element.innerHTML = "";
-    element.appendChild(createHtmlElement("span", "placeholder", content, div ));
+  }
+
+  if (element.innerHTML.trim() === "") {
+    element.setAttribute(data, dataContent);
   }
 }
