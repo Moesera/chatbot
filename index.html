@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./src/css/style.css" />
+  <link rel="stylesheet" href="./src/css/import/media.css" />
   <script src="./src/js/index.js" defer></script>
   <title>OpenAI ChatBot</title>
 </head>
@@ -13,13 +14,13 @@
   <header>
     <div>
       <span>ChatBot</span>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
-  </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <main>
     <h1>Chat</h1>
@@ -28,9 +29,10 @@
       <div id="bot-response" class="response-wrapper"></div>
       <!-- User input to ChatBot -->
       <form>
-        <label name="prompt"></label>
-        <input id="prompt" type="text" name="prompt" />
-        <button type="submit"><img src="./src/assets/icons/icons8-arrow-right-32.png" alt="arrow right" /></button>
+        <div contenteditable="true" id="prompt" data-ph="Message"/></div>
+      <button contenteditable="false" type="submit">
+        <img src="./src/assets/icons/icons8-arrow-right-32.png" alt="arrow right" />
+      </button>
       </form>
     </section>
   </main>
