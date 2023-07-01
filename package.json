@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Sigvel/chatbot#readme",
   "devDependencies": {
+    "dotenv": "^16.3.1",
     "vite": "^4.3.9"
   },
   "dependencies": {
