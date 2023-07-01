@@ -1,3 +1,5 @@
+import { checkPlaceholderEmpty } from "./components/userInputs";
+
 const userPrompt = document.getElementById("prompt");
 
 userPrompt.addEventListener('input', () => {
@@ -11,5 +13,5 @@ userPrompt.addEventListener('input', () => {
     userPrompt.style.overflowY = 'hidden';
   }
 
-  checkPlaceholderEmpty(userPrompt);
+  checkPlaceholderEmpty(userPrompt, "Message", "data-ph");
 });
