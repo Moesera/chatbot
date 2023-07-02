@@ -35,7 +35,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  background: url("/src/assets/images/peakpx\ \(3\).jpg");
+  background: url("../assets/images/peakpx.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
