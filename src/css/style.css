@@ -30,16 +30,6 @@ a:hover {
   color: white;
 }
 
-ul {
-  display: flex;
-  gap: 1.5rem;
-}
-
-li {
-  list-style: none;
-  color: var(--userColor);
-}
-
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: grid;
