@@ -1,12 +1,12 @@
 import { createHtmlElement } from "../html/createHtml";
 import { headers } from "./headers";
 import { apiPath } from "../constants/urls";
-import { loaderContainer } from "..";
+import * as constant from "../constants/index";
 
 export async function fetchData(body, method) {
   try {
     const container = createHtmlElement("div", "bot-response", "", botResponseContainer);
-    loaderContainer.style.display = "flex";
+    constant.loaderContainer.style.display = "flex";
 
     const res = await fetch(`${apiPath}`, {
       method: method,
