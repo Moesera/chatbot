@@ -1,4 +1,3 @@
-
 /**
  * Create a html element component
  * @param {string} elementProp the element you want to create
@@ -14,10 +13,18 @@
  * ```
  */
 export function createHtmlElement(elementProp, classProp, contentProp, htmlParent, data, dataContent) {
-
-  var htmlElement = document.createElement(`${elementProp}`);
-  htmlElement.innerHTML = contentProp;
-  htmlElement.setAttribute(data, dataContent);
+  const htmlElement = document.createElement(`${elementProp}`);
   htmlElement.classList.add(`${classProp}`);
-  htmlParent.append(htmlElement);
+
+  if (data) {
+    htmlElement.setAttribute(data, dataContent);
+  }
+
+  const innerContent = document.createElement("p");
+  innerContent.innerHTML = contentProp;
+  innerContent.classList.add("bot-content");
+
+  htmlElement.appendChild(innerContent);
+
+  return htmlParent.appendChild(htmlElement);
 }

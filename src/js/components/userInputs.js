@@ -10,13 +10,12 @@ import { createHtmlElement } from "../html/createHtml";
  * checkPlaceholderEmpty(htmlElement, "content to set if empty")
  * ```  
  */
-export function checkPlaceholderEmpty(element, data, dataContent) {
-  
+export function checkPlaceholderEmpty(element, attribute, placeholder) {
   if (element.innerHTML.trim() === "<br>") {
     element.innerHTML = "";
   }
 
   if (element.innerHTML.trim() === "") {
-    element.setAttribute(data, dataContent);
+    element.setAttribute(attribute, placeholder);
   }
 }

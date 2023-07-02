@@ -14,23 +14,29 @@
   <header>
     <div>
       <span>ChatBot</span>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
+      <label for="accessKeyInput">
+        <img id="accessKeyDelete" src="./src/assets/icons/icons8-cross-24.png" alt="cross icon">
+        <input type="text" id="accessKeyInput" name="accessKeyInput" placeholder="api key"/>
+      </label>
     </div>
   </header>
   <main>
-    <h1>Chat</h1>
+    <h1>OpenAI chatBot</h1>
     <section class="page-container">
       <!-- User response box -->
-      <div id="bot-response" class="response-wrapper"></div>
+      <section class="response-container">
+        <div id="botResponseContainer" class="response-wrapper">
+      </div>
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
+      </section>
       <!-- User input to ChatBot -->
-      <form>
-        <span contenteditable="true" id="prompt" data-ph="Message"/></span>
-      <button contenteditable="false" type="submit">
+      <form id="userInputForm" onsubmit="return false">
+        <label for="message"></label>
+        <textarea placeholder="message" name="messages" rows="1" id="prompt" data-ph="Message"/></textarea>
+        <input type="submit" id="submitButton" />
+      <button type="submit">
         <img src="./src/assets/icons/icons8-arrow-right-32.png" alt="arrow right" />
       </button>
       </form>
@@ -38,9 +44,9 @@
   </main>
   <footer>
     <div class="footer-links">
-      <a href="#">Github</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Github</a>
+      <a href="https://github.com/Sigvel">github</a>
+      <a href="https://www.linkedin.com/in/sigvel/">linkedIn</a>
+      <a href="https://icons8.com/">icons8</a>
     </div>
     <p>Copyright @Sigvel / Tony Erlandsen</p>
   </footer>
