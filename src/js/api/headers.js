@@ -1,3 +1,5 @@
+import * as storage from "../storage/index";
+
 export const headers = (contentType) => {
   const API_KEY = storage.load("api_key");
   const headers = {};
@@ -6,7 +8,7 @@ export const headers = (contentType) => {
     headers["Content-Type"] = contentType;
   }
 
-  if (token) {
+  if (API_KEY) {
     headers.Authorization = `Bearer ${API_KEY}`;
   }
 
