@@ -4,11 +4,15 @@
     width: 120rem;
   }
 
+  header label {
+    width: 50rem;
+  }
+
   footer div {
     width: 120rem;
   }
 
-  .response-wrapper {
+  .response-container {
     width: 120rem;
   }
 
