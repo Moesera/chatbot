@@ -20,7 +20,7 @@
 
 a {
   text-decoration: none;
-  color: aquamarine;
+  color: var(--userColor);
   transition: background-color 0.5s;
   font-weight: bold;
   font-size: 1.3rem;
@@ -37,7 +37,7 @@ ul {
 
 li {
   list-style: none;
-  color: aquamarine;
+  color: var(--userColor);
 }
 
 body {
@@ -76,9 +76,11 @@ header label img {
   margin-right: 0.5rem;
   justify-self: end;
   z-index: 2;
+  cursor: pointer;
 }
 
 header input {
+  font-size: 1.5rem;
   border-width: 0.1rem;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -89,6 +91,7 @@ header input {
 
 input::placeholder {
   color: white;
+  text-transform: lowercase;
 }
 
 header span {
@@ -145,15 +148,48 @@ h1 {
   padding: 1rem 0rem 3rem;
 }
 
-.response-wrapper {
+.response-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 1;
   margin: 0 auto;
+  padding: 1rem;
   border-radius: 0.5rem;
   background: rgba(0, 0, 0, 0.85);
   min-height: 20rem;
   width: 90%;
   color: white;
   box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+
+.response-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bot-response {
+  width: 80%;
+  background: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  word-wrap: break-word;
+}
+
+.user-input {
+  width: 80%;
+  background-color: var(--userColor);
+  color: black;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  word-wrap: break-word;
+}
+
+.bot-content {
+  width: 100%;
 }
 
 form {
@@ -165,6 +201,7 @@ form {
 }
 
 form textarea {
+  text-transform: lowercase;
   resize: none;
   max-height: 20rem;
   width: 100%;
@@ -199,7 +236,7 @@ button[type="submit"] img {
 }
 
 form > button[type="submit"]:hover{
-  background-color: aquamarine;
+  background-color: var(--userColor);
 }
 
 /* Error messages */
@@ -215,4 +252,48 @@ form > button[type="submit"]:hover{
   color: green;
   padding: 1rem;
   border-radius: 0.5rem;
+}
+
+/* loader */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animationLoader 2s linear infinite;
+}
+
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animationLoader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
