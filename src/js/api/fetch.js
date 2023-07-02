@@ -27,7 +27,7 @@ export async function fetchData(body, method) {
 
     const reader = res.body.getReader();
     const decoder = new TextDecoder("utf-8");
-    
+
     while (true) {
       const { done, value } = await reader.read();
 
@@ -53,7 +53,6 @@ export async function fetchData(body, method) {
       }
     }
   } catch (error) {
-    console.log(error);
     container.textContent += error;
   } finally {
     constant.loaderContainer.style.display = "none";
