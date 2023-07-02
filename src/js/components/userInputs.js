@@ -1,5 +1,3 @@
-import { createHtmlElement } from "../html/createHtml";
-
 /**
  * Checks if a placeholder is empty
  * @param {htmlNode} element The input element you want to check if its empty
