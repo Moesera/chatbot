@@ -15,8 +15,8 @@
     <div>
       <span>ChatBot</span>
       <label for="accessKeyInput">
-        <img src="./src/assets/icons/icons8-cross-24.png" alt="cross icon">
-        <input type="text" id="accessKeyInput" name="accessKeyInput" placeholder="enter api key"/>
+        <img id="accessKeyDelete" src="./src/assets/icons/icons8-cross-24.png" alt="cross icon">
+        <input type="text" id="accessKeyInput" name="accessKeyInput" placeholder="api key"/>
       </label>
       <nav>
         <ul>
@@ -30,11 +30,17 @@
     <h1>Chat</h1>
     <section class="page-container">
       <!-- User response box -->
-      <div id="bot-response" class="response-wrapper"></div>
+      <section class="response-container">
+        <div id="botResponseContainer" class="response-wrapper">
+      </div>
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
+      </section>
       <!-- User input to ChatBot -->
       <form id="userInputForm">
         <label for="message"></label>
-        <textarea placeholder="message" name="message" rows="1" id="prompt" data-ph="Message"/></textarea>
+        <textarea placeholder="message" name="messages" rows="1" id="prompt" data-ph="Message"/></textarea>
       <button contenteditable="false" type="submit" id="submitButton">
         <img src="./src/assets/icons/icons8-arrow-right-32.png" alt="arrow right" />
       </button>
