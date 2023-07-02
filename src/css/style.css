@@ -67,6 +67,7 @@ header label img {
   justify-self: end;
   z-index: 2;
   cursor: pointer;
+  background-color: black;
 }
 
 header input {
