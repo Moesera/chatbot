@@ -3,6 +3,12 @@ import { headers } from "./headers";
 import { apiPath } from "../constants/urls";
 import * as constant from "../constants/index";
 
+/**
+ * fetches api endpoint
+ * @param {array} body body form element from handleUserInput
+ * @param {string} method method to use in fetch
+ * @returns api response
+ */
 export async function fetchData(body, method) {
   try {
     const container = createHtmlElement("div", "bot-response", "", botResponseContainer);
