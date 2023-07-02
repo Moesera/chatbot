@@ -1,5 +1,4 @@
 import { createFormData } from "./api/handler/handleUserInput";
-import { createHtmlElement } from "./html/createHtml";
 import * as storage from "./storage/index";
 import * as constant from "./constants/index";
 
@@ -29,9 +28,9 @@ constant.userPrompt.addEventListener("keydown", (e) => {
   }
 
   constant.userPrompt.style.height = "auto";
-  constant.userPrompt.style.height = `${userPrompt.scrollHeight}px`;
+  constant.userPrompt.style.height = `${constant.userPrompt.scrollHeight}px`;
 
-  if (userPrompt.scrollHeight > 200) {
+  if (constant.userPrompt.scrollHeight > 200) {
     constant.userPrompt.style.overflowY = "scroll";
     constant.userPrompt.style.height = "100rem";
   } else {
