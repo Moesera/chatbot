@@ -21,7 +21,7 @@
     </div>
   </header>
   <main>
-    <h1>Chat</h1>
+    <h1>OpenAI chatBot</h1>
     <section class="page-container">
       <!-- User response box -->
       <section class="response-container">
@@ -32,10 +32,11 @@
       </div>
       </section>
       <!-- User input to ChatBot -->
-      <form id="userInputForm">
+      <form id="userInputForm" onsubmit="return false">
         <label for="message"></label>
         <textarea placeholder="message" name="messages" rows="1" id="prompt" data-ph="Message"/></textarea>
-      <button contenteditable="false" type="submit" id="submitButton">
+        <input type="submit" id="submitButton" />
+      <button type="submit">
         <img src="./src/assets/icons/icons8-arrow-right-32.png" alt="arrow right" />
       </button>
       </form>
