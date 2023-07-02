@@ -1,18 +1,30 @@
 import { fetchData } from "../fetch";
+import { createHtmlElement } from "../../html/createHtml";
+import * as constant from "../../constants/index";
 
-export function createFormData(e) {
-  if(e.target.value <= 0) {
-    return
-  }
+const aiModel = "gpt-3.5-turbo";
 
+export async function createFormData(e) {
   e.preventDefault();
 
-  const form = e.target;
+  if(e.target.value >= 0) {
+    return;
+  }
 
+  const form = e.target;
   const formData = new FormData(form);
   const formValues = Object.fromEntries(formData.entries());
 
-  const body = fetchData(formValues, "post");
+  const prompt = formValues.messages;
 
-  console.log(body);
+  const newFormValues =  {
+    messages: [{role: "user", content: prompt}],
+    model: aiModel,
+    stream: true,
+  }
+
+  createHtmlElement("div", "user-input", prompt, constant.botResponseContainer);
+
+  await fetchData(newFormValues, "post");
+  constant.userInputForm.reset();
 }
