@@ -1,29 +1,66 @@
 import { createFormData } from "./api/handler/handleUserInput";
+import { createHtmlElement } from "./html/createHtml";
+import * as storage from "./storage/index";
+import * as constant from "./constants/index";
 
 //  move into a constants file / folder
-const userPrompt = document.getElementById("prompt");
-const userInputForm = document.getElementById("userInputForm");
-const submitButton = document.getElementById("submitButton");
-const accessKeyInput = document.getElementById("accessKeyInput");
+const root = document.documentElement;
+const userColor = getComputedStyle(root).getPropertyValue('--userColor');
+
+function checkForKey () {
+  const key = storage.load("api_key");
+
+  if(key) {
+    constant.accessKeyInput.value = key;
+    constant.accessKeyInput.disabled = true;
+    constant.accessKeyInput.style.color = userColor;
+  } else {
+    return
+  }
+}
+
+
+ // user input
 
 //  maybe move this into its own function and import it to keep it cleaner
-userPrompt.addEventListener("keydown", (e) => {
+constant.userPrompt.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && !e.shiftKey) {
     e.preventDefault();
-    submitButton.click();
   }
 
-  userPrompt.style.height = "auto";
-  userPrompt.style.height = `${userPrompt.scrollHeight}px`;
+  constant.userPrompt.style.height = "auto";
+  constant.userPrompt.style.height = `${userPrompt.scrollHeight}px`;
 
   if (userPrompt.scrollHeight > 200) {
-    userPrompt.style.overflowY = "scroll";
-    userPrompt.style.height = "100rem";
+    constant.userPrompt.style.overflowY = "scroll";
+    constant.userPrompt.style.height = "100rem";
   } else {
-    userPrompt.style.overflowY = "hidden";
+    constant.userPrompt.style.overflowY = "hidden";
   }
 });
 
-userInputForm.addEventListener("submit", createFormData);
 
-// accessKeyInput.addEventListener("")
+// submit input
+constant.userInputForm.addEventListener("submit", createFormData);
+
+// Api key inputs
+constant.accessKeyInput.addEventListener("keydown", (e) => {
+if (e.key === "Enter") {
+  storage.save("api_key", e.target.value);
+
+  constant.accessKeyInput.value = e.target.value;
+  constant.accessKeyInput.disabled = true;
+  constant.accessKeyInput.style.color = userColor;
+}
+});
+
+accessKeyDelete.addEventListener("click", (e) => {
+  storage.remove("api_key");
+
+  constant.accessKeyInput.value = "";
+  constant.accessKeyInput.disabled = false;
+  constant.accessKeyInput.style.color = "white";
+})
+
+
+checkForKey();
