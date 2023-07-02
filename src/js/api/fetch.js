@@ -10,12 +10,12 @@ import * as constant from "../constants/index";
  * @returns api response
  */
 export async function fetchData(body, method) {
-  try {
-    const container = createHtmlElement("div", "bot-response", "", botResponseContainer);
-    constant.loaderContainer.style.display = "flex";
+  const container = createHtmlElement("div", "bot-response", "", botResponseContainer);
 
+  try {
+    constant.loaderContainer.style.display = "flex";
     const res = await fetch(`${apiPath}`, {
-      method: method,
+      method,
       body: JSON.stringify(body),
       headers: headers("application/json"),
     });
@@ -27,10 +27,9 @@ export async function fetchData(body, method) {
 
     const reader = res.body.getReader();
     const decoder = new TextDecoder("utf-8");
-
+    
     while (true) {
-      const chunk = await reader.read();
-      const { done, value } = chunk;
+      const { done, value } = await reader.read();
 
       if (done) {
         break;
@@ -54,7 +53,8 @@ export async function fetchData(body, method) {
       }
     }
   } catch (error) {
-    return await error;
+    console.log(error);
+    container.textContent += error;
   } finally {
     constant.loaderContainer.style.display = "none";
   }
