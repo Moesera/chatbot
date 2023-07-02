@@ -50,6 +50,6 @@ export async function fetchData(body, method) {
   } catch (error) {
     return await error;
   } finally {
-    loaderContainer.style.display = "none";
+    constant.loaderContainer.style.display = "none";
   }
 }
