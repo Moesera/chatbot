@@ -54,7 +54,6 @@ header {
 header label {
   display: grid;
   align-items: center;
-  width: 50%;
 }
 
 header label img, header label input {
@@ -102,7 +101,7 @@ header div {
 
 main {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto;
   min-height: 100%;
 }
 
@@ -129,6 +128,15 @@ footer > p {
 h1 {
   font-size: 2rem;
   margin: 1rem auto auto;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .page-container {
@@ -202,6 +210,14 @@ form textarea {
   background: rgba(0, 0, 0, 0.85);
   color: white;
   box-shadow: var(--shadow);
+}
+
+input[type="submit"] {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 /* .placeholder {
