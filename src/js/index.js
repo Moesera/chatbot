@@ -18,13 +18,13 @@ function checkForKey () {
   }
 }
 
-
  // user input
 
 //  maybe move this into its own function and import it to keep it cleaner
 constant.userPrompt.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && !e.shiftKey) {
     e.preventDefault();
+    constant.submitButton.click();
   }
 
   constant.userPrompt.style.height = "auto";
